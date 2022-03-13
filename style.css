@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
+body{
+    background-color: bisque;
+}
+*{margin:0;
+padding:0;}
+nav{
+    font-family: 'Sansita Swashed',cursive;
+}
+nav ul{
+    display:flex;
+    align-items: center;
+    list-style-type: none;
+    height:90px;
+    background-color: darkgrey;
+}
+nav ul li{
+    padding:0 15px;
+    font-size: 1.5rem;
+}
+.logo img{
+    width:150px;
+    height:90px;
+    padding:0 10px;
+}
+.logo{
+    display:flex;
+    align-items: center;
+    font-size: 2rem;
+}
+.container{
+    min-height:75vh;
+    background-color:rgb(14, 8, 12);
+    color:rgb(13, 13, 14);
+    font-family:'Sansita swashed',cursive;
+    margin:25px auto;
+    width:80%;
+    border-radius: 14px;
+    padding:30px;
+    background-image: url('classical.jpeg');
+    background-repeat: no-repeat;
+    background-size: 125%;
+    
+}
+.bottom{
+    position: sticky;
+    height:100px;
+    background-color: chocolate;
+    bottom:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#progressbar{
+    width:90vw;
+    cursor:pointer;
+}
+#icon{
+    width:30px;
+    cursor: pointer;
+}
+#icon2{
+    width:35px;
+    cursor:pointer;
+}
+#icon3{
+    width:35px;
+    cursor:pointer;
+}
+#icon4{
+    width:35px;
+    cursor:pointer;
+}
+.icons{
+    margin-top:20px;
+}
+.songitem{
+height:55px;
+display:flex;
+background-color: aliceblue;
+width: 35%;
+margin:5px 0;
+justify-self:left;
+justify-content:space-between;
+align-items:center;
+border-radius:30px;
+background-color:rgb(236, 236, 229) ;
+}
+.songitem img{
+    height:55px;
+    width:50px;
+margin:0 20px;
+border-radius: 34px;
+}
+.songlistplay img{
+    height:35px;
+    width:30px
+}
+.timestamp{
+    margin:0 23px;
+    cursor:pointer;
+}
+.songinfo{
+    position:absolute;
+    right:5vw;
+    font-family: 'Sansita Swashed',cursive;
+}
+.songinfo img{
+    opacity:0;
+    transition:opacity 1s ease-in;
+}
+.btn{
+    background-color:rgb(221, 167, 129);
+    color:black;
+    font-family: 'Sansita swashed',cursive;
+    border-radius:5px;
+    left:15vw;
+    size: 45px;
+
+}

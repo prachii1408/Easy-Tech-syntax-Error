@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nostalgic 90's</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><img src="logo.png" alt="Sangeet">Sangeet</li>
+            <li>Nostalgic 90's</li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="songitem">
+            <img src="dil to pagal.png" alt="1">
+            <span>Dil to pagal hai</span>
+            <span class="songlistplay"><span class="timestamp" id="1">05:38</span><button class="btn" onclick="play1()">play</button>;
+        </div>
+    
+        <div class="songitem">
+            <img src="do pal.png" alt="1">
+            <span>Do pal</span>
+            <span class="songlistplay"><span class="timestamp" id="2">04:28</span><button class="btn" onclick="play2()">play</button>;
+        </div>
+        <div class="songitem">
+            <img src="o palanhare.png" alt="1">
+            <span>o palanhare</span>
+            <span class="songlistplay"><span class="timestamp" id="'3">05:19</span><button class="btn" onclick="play3()">play</button>;
+        </div>
+        <div class="songitem">
+            <img src="hotho pe.png" alt="1">
+            <span>Hotho pe bas</span>
+            <span class="songlistplay"><span class="timestamp" id="4">04:43</span><button class="btn" onclick="play4()">play</button>;
+        </div>
+        <div class="songitem">
+            <img src="hume aur jeene.png" alt="1">
+            <span>Agar tum na hote</span>
+            <span class="songlistplay"><span class="timestamp" id="5">04:10</span><button class="btn" onclick="play5()">play</button>;
+        </div>
+        <div class="songitem">
+            <img src="shayad meri.png" alt="1">
+            <span>Shayad meri shaadi</span>
+            <span class="songlistplay"><span class="timestamp" id="'6">06:38</span><button class ="btn" onclick="play6()">play</button>;
+        </div>
+        <div class="songitem">
+            <img src="tere naina.png" alt="1">
+            <span>Tere naina mere naino se</span>
+            <span class="songlistplay"><span class="timestamp" id="7">05:29</span><button class ="btn" onclick="play7()">play</button>;
+        </div>
+            
+        <div class="songlist"></div>
+        <div class="songbanner"></div>
+
+    </div>
+
+    </div>
+    <div class="bottom">
+        <input type="range" name="range" id="progressbar" min="0" value="0" max="150">
+        <div class="icons">
+            
+            <img src="pause.png" id="icon4">
+        <img src="play.jpg" id="icon">
+        
+     </div>
+    <div class="songinfo">
+        <image src="playing.gif" width="35px" alt="" id="gif"></image>
+    </div>
+
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
+body{
+    background-color: bisque;
+}
+*{margin:0;
+padding:0;}
+nav{
+    font-family: 'Sansita Swashed',cursive;
+}
+nav ul{
+    display:flex;
+    align-items: center;
+    list-style-type: none;
+    height:90px;
+    background-color: darkgrey;
+}
+nav ul li{
+    padding:0 125px;
+    font-size: 3rem;
+}
+.logo img{
+    width:150px;
+    height:90px;
+    padding:0 10px;
+}
+.logo{
+    display:flex;
+    align-items: center;
+    font-size: 2rem;}
+    .bottom{
+    position: sticky;
+    height:100px;
+    background-color: rgb(219, 118, 185);
+    bottom:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    min-height:75vh;
+    background-color:rgb(71, 63, 95);
+    color:rgb(13, 13, 14);
+    font-family:'Sansita swashed',cursive;
+    margin:25px auto;
+    width:80%;
+    border-radius: 14px;
+    padding:30px;
+    background-image: url('nostalgic.png');
+    background-repeat: no-repeat;
+background-size: 80%;
+    background-position: right;
+}
+#progressbar{
+    width:90vw;
+    cursor:pointer;
+}
+#icon{
+    width:30px;
+    cursor: pointer;}
+#icon4{
+    width:35px;
+    cursor:pointer;}
+.songitem{
+height:55px;
+display:flex;
+background-color: rgb(216, 206, 198);
+width: 35%;
+margin:5px 0;
+justify-self:left;
+justify-content:space-between;
+align-items:center;
+border-radius:30px;
+background-color:rgb(168, 98, 110) ;
+}
+.songitem img{
+    height:55px;
+    width:50px;
+margin:0 20px;
+border-radius: 34px;
+}
+.songlistplay img{
+    height:35px;
+    width:30px
+}
+.timestamp{
+    margin:0 23px;
+    cursor:pointer;
+}
+.songinfo{
+    position:absolute;
+    right:5vw;
+    font-family: 'Sansita Swashed',cursive;
+}
+.songinfo img{
+    opacity:0;
+    transition:opacity 1s ease-in;
+}
+.timestamp{
+    margin:0 23px;
+    cursor:pointer;
+}
+.songinfo{
+    position:absolute;
+    right:5vw;
+    font-family: 'Sansita Swashed',cursive;
+}
+.songinfo img{
+    opacity:0;
+    transition:opacity 1s ease-in;
+}
+.btn{
+    background-color:rgb(221, 167, 129);
+    color:black;
+    font-family: 'Sansita swashed',cursive;
+    border-radius:5px;
+    left:15vw;
+    size: 45px;
+
+}
+
+    </style>
+    <script>
+        let audioelement=new Audio('dil to pagal hai.mpeg');
+let audioelement2=new Audio('do pal.mpeg');
+let audioelement3=new Audio('o palahare.mpeg');
+let audioelement4=new Audio('hotho pe bas.mpeg');
+let audioelement5=new Audio('hume aur jeene ki.mpeg');
+let audioelement6=new Audio('shayad meri.mpeg');
+let audioelement7=new Audio('tere naina.mpeg');
+let masterplay=document.getElementById('icon');
+let stop=document.getElementById('icon4');
+let progressbar=document.getElementById('progressbar');
+let gif=document.getElementById('gif');
+function play1(){
+    if(audioelement.paused || audioelement.currentTime==0){
+        audioelement.play();
+        gif.style.opacity=1;
+    }
+    stop.addEventListener('click',()=>{audioelement.pause();
+        gif.style.opacity=0;})
+        
+}
+function play2(){
+    if(audioelement.paused || audioelement.currentTime==0){
+        audioelement2.play();
+        gif.style.opacity=1;}
+        stop.addEventListener('click',()=>{audioelement2.pause();
+            gif.style.opacity=0;})
+        
+}
+function play3(){
+    if(audioelement.paused || audioelement.currentTime==0){
+        audioelement3.play();
+        gif.style.opacity=1;}
+        stop.addEventListener('click',()=>{audioelement3.pause();
+            gif.style.opacity=0;})
+        
+}
+function play4(){
+    if(audioelement.paused || audioelement.currentTime==0){
+        audioelement4.play();
+        gif.style.opacity=1;}
+        stop.addEventListener('click',()=>{audioelement4.pause();
+            gif.style.opacity=0;})
+        
+}
+function play5(){
+    if(audioelement.paused || audioelement.currentTime==0){
+        audioelement5.play();
+        gif.style.opacity=1;}
+        stop.addEventListener('click',()=>{audioelement5.pause();
+            gif.style.opacity=0;})
+        
+}
+function play6(){
+    if(audioelement.paused || audioelement.currentTime==0){
+        audioelement6.play();
+        gif.style.opacity=1;}
+        stop.addEventListener('click',()=>{audioelement6.pause();
+            gif.style.opacity=0;})
+        
+}
+function play7(){
+    if(audioelement.paused || audioelement.currentTime==0){
+        audioelement7.play();
+        gif.style.opacity=1;
+    }
+    stop.addEventListener('click',()=>{audioelement7.pause();
+        gif.style.opacity=0;})
+        
+}
+audioelement.addEventListener('timeupdate',()=>{
+    progress=parseInt((audioelement.currentTime/audioelement.duration)*100);
+    progressbar.value=progress;
+})
+progressbar.addEventListener('change',()=>{audioelement.currentTime=progressbar.value*audioelement.duration/100})
+const makeplay=()=>{
+    Array.from(document.getElementsByClassName('songitemplay')).forEach((element)=>
+    {element.classList.remove('pause.jpg');
+    element.classList.add('play.png');})
+}  
+audioelement2.addEventListener('timeupdate',()=>{
+    progress=parseInt((audioelement2.currentTime/audioelement2.duration)*100);
+    progressbar.value=progress;
+})
+progressbar.addEventListener('change',()=>{audioelement2.currentTime=progressbar.value*audioelement2.duration/100})
+makeplay=()=>{
+    Array.from(document.getElementsByClassName('songitemplay')).forEach((element)=>
+    {element.classList.remove('pause.jpg');
+    element.classList.add('play.png');})
+} 
+audioelement3.addEventListener('timeupdate',()=>{
+    progress=parseInt((audioelement3.currentTime/audioelement3.duration)*100);
+    progressbar.value=progress;
+})
+progressbar.addEventListener('change',()=>{audioelement3.currentTime=progressbar.value*audioelement3.duration/100})
+makeplay=()=>{
+    Array.from(document.getElementsByClassName('songitemplay')).forEach((element)=>
+    {element.classList.remove('pause.jpg');
+    element.classList.add('play.png');})
+}  
+audioelemen4t.addEventListener('timeupdate',()=>{
+    progress=parseInt((audioelement4.currentTime/audioelement4.duration)*100);
+    progressbar.value=progress;
+})
+progressbar.addEventListener('change',()=>{audioelement4.currentTime=progressbar.value*audioelement4.duration/100})
+makeplay=()=>{
+    Array.from(document.getElementsByClassName('songitemplay')).forEach((element)=>
+    {element.classList.remove('pause.jpg');
+    element.classList.add('play.png');})
+}  
+audioelement5.addEventListener('timeupdate',()=>{
+    progress=parseInt((audioelement5.currentTime/audioelement5.duration)*100);
+    progressbar.value=progress;
+})
+progressbar.addEventListener('change',()=>{audioelement5.currentTime=progressbar.value*audioelement5.duration/100})
+makeplay=()=>{
+    Array.from(document.getElementsByClassName('songitemplay')).forEach((element)=>
+    {element.classList.remove('pause.jpg');
+    element.classList.add('play.png');})
+}  
+audioelement6.addEventListener('timeupdate',()=>{
+    progress=parseInt((audioelement6.currentTime/audioelement6.duration)*100);
+    progressbar.value=progress;
+})
+progressbar.addEventListener('change',()=>{audioelement6.currentTime=progressbar.value*audioelement6.duration/100})
+makeplay=()=>{
+    Array.from(document.getElementsByClassName('songitemplay')).forEach((element)=>
+    {element.classList.remove('pause.jpg');
+    element.classList.add('play.png');})
+}  
+audioelement7.addEventListener('timeupdate',()=>{
+    progress=parseInt((audioelement7.currentTime/audioelement7.duration)*100);
+    progressbar.value=progress;
+})
+progressbar.addEventListener('change',()=>{audioelement7.currentTime=progressbar.value*audioelement7.duration/100})
+makeplay=()=>{
+    Array.from(document.getElementsByClassName('songitemplay')).forEach((element)=>
+    {element.classList.remove('pause.jpg');
+    element.classList.add('play.png');})
+}  
+    </script>
+</body>
+</html>
